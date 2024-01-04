@@ -14,5 +14,7 @@ namespace project_scoo.Models
 
         [ForeignKey("TripID")]
         public Trip Trip { get; set; }
+        [ForeignKey("AdminId")]
+        public Admin Admin { get; set; }
     }
 }

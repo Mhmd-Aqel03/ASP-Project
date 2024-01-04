@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace project_scoo.Models
 {
@@ -17,6 +18,8 @@ namespace project_scoo.Models
         [Required]
         public DateTime EndDate { get; set; }
 
+        [ForeignKey("AdminId")]
+        public Admin Admin { get; set; }
         public ICollection<Bus> Busses { get; set; }
         public ICollection<Passenger_trips> Pasenger_Trip {get;set; }
     }
