@@ -60,7 +60,8 @@ namespace project_scoo.Controllers
         {
             try
             {
-
+                int adminid = (int)HttpContext.Session.GetInt32("adminId");
+                trip.Admin = _context.Admins.Find(adminid);
                 _context.Trips.Add(trip);
                 _context.SaveChanges();
 
@@ -93,7 +94,7 @@ namespace project_scoo.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,BusNumber,Destination,StartDate,EndDate")] Trip trip)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,NumOfBusses,Destination,StartDate,EndDate")] Trip trip)
         {
             if (id != trip.Id)
             {

@@ -11,9 +11,10 @@ namespace project_scoo.Models
         public string CapName { get; set; }
         [Required]
         public int NumOfSeats { get; set; }
+        
+        [ForeignKey("TripId")]
+        public virtual Trip Trip { get; set; }
 
-        [ForeignKey("TripID")]
-        public Trip Trip { get; set; }
         [ForeignKey("AdminId")]
         public Admin Admin { get; set; }
     }

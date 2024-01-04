@@ -59,7 +59,7 @@ namespace project_scoo.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(IFormCollection form)
         {
-
+            int adminid = (int)HttpContext.Session.GetInt32("adminId");
             string capName = form["CapName"];
             int numofseats = int.Parse(form["NumOfSeats"]);
             int TripId = int.Parse(form["TripId"]);
@@ -68,6 +68,7 @@ namespace project_scoo.Controllers
             Bus.CapName = capName;
             Bus.NumOfSeats = numofseats;
             Bus.Trip = _context.Trips.Find(TripId);
+            Bus.Admin = _context.Admins.Find(adminid);
 
             _context.Busses.Add(Bus);
             _context.SaveChanges();

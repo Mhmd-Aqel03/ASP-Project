@@ -4,7 +4,6 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace project_scoo.Models
 {
-    [Index(nameof(Trip.BusNumber), IsUnique = true)]
     public class Trip
     {
         [Key]
