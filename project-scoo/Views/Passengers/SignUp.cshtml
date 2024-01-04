@@ -1,0 +1,67 @@
+﻿@model project_scoo.Models.Passenger;
+
+<form method="post">
+
+    <table>
+
+        <tr>
+            <td>
+                Name
+            </td>
+            <td>
+                <input type="text" asp-for="Name"/>
+                <span asp-validation-for="Name"></span>
+            </td>
+
+        </tr>
+
+        <tr>
+            <td>
+                Email
+            </td>
+            <td>
+                <input type="text" asp-for="Email" />
+                <span asp-validation-for="Email"></span>
+            </td>
+
+        </tr>
+
+        <tr>
+            <td>
+                Useranme
+            </td>
+            <td>
+                <input type="text" asp-for="Username"/>
+            </td>
+
+        </tr>
+
+        <tr>
+            <td>
+                Password
+            </td>
+            <td>
+                <input type="password" asp-for="Password" />
+            </td>
+
+        </tr>
+
+        <tr>
+            <td>
+                Gender
+            </td>
+            <td>
+                Male:
+                <input type="radio" asp-for="gender" value="0"/>
+                |Female:
+                <input type="radio" asp-for="gender" value="1"/>
+            </td>
+
+        </tr>
+
+    </table>
+    <input type="submit" value="SignUp" class="btn btn-primary"/>
+
+</form>
+
+@TempData["Msg"]

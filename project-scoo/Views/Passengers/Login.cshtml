@@ -1,0 +1,39 @@
+﻿@model FootballGame.Models.Login;
+
+<form method="post">
+    <table>
+        <tr>
+            <td>
+                username
+            </td>
+            <td>
+                <input asp-for="Username" type="text" class="form-control"/>
+                
+            </td>
+            <td>
+                <span asp-validation-for="Username"> </span>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                password
+            </td>
+            <td>
+                <input asp-for="Password" type="password" class="form-control" />
+            </td>
+            <td>
+                <span style="color:red" asp-validation-for="Password"> </span>
+            </td>
+        </tr>
+
+    </table>
+    <br/>
+
+   <input type="submit" value="Login" class="btn btn-outline-primary"/>
+    <a asp-action="SignUp" asp-controller="Passengers" class="btn btn-link"> SignUp</a>
+     
+
+</form>
+
+@TempData["Msg"]
