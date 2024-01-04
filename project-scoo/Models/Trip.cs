@@ -9,7 +9,7 @@ namespace project_scoo.Models
         [Key]
         public int Id { get; set; }
         [Required]
-        public int BusNumber {  get; set; }
+        public int NumOfBusses {  get; set; }
         [Required]
         public string Destination { get; set; }
         [Required]
