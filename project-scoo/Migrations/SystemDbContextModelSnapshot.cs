@@ -64,7 +64,6 @@ namespace project_scoo.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<int>("AdminId")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("CapName")
@@ -74,8 +73,7 @@ namespace project_scoo.Migrations
                     b.Property<int>("NumOfSeats")
                         .HasColumnType("int");
 
-                    b.Property<int?>("TripId")
-                        .IsRequired()
+                    b.Property<int>("TripId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -182,14 +180,14 @@ namespace project_scoo.Migrations
                     b.HasOne("project_scoo.Models.Admin", "Admin")
                         .WithMany()
                         .HasForeignKey("AdminId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("project_scoo.Models.Trip", "Trip")
                         .WithMany("Busses")
                         .HasForeignKey("TripId")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        ;
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Admin");
 
@@ -201,13 +199,13 @@ namespace project_scoo.Migrations
                     b.HasOne("project_scoo.Models.Passenger", "Passenegr")
                         .WithMany("Pasenger_Trip")
                         .HasForeignKey("PassengerID")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("project_scoo.Models.Trip", "Trip")
                         .WithMany("Pasenger_Trip")
                         .HasForeignKey("TripID")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Passenegr");
@@ -220,7 +218,7 @@ namespace project_scoo.Migrations
                     b.HasOne("project_scoo.Models.Admin", "Admin")
                         .WithMany()
                         .HasForeignKey("AdminId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Admin");

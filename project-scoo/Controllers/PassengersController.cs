@@ -95,7 +95,7 @@ namespace project_scoo.Controllers
                 else if (admin != null)
                 {
 
-                    HttpContext.Session.SetInt32("adminID", admin.Id);
+                    HttpContext.Session.SetInt32("adminId", admin.Id);
 
                     return RedirectToAction("Index", "Buses");
                 }

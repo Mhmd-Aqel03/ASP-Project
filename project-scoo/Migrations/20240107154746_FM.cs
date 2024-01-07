@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace project_scoo.Migrations
 {
-    public partial class FirstM : Migration
+    public partial class FM : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -89,8 +89,8 @@ namespace project_scoo.Migrations
                         name: "FK_Busses_Trips_TripId",
                         column: x => x.TripId,
                         principalTable: "Trips",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id"
+                        );
                 });
 
             migrationBuilder.CreateTable(

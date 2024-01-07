@@ -12,8 +12,8 @@ using project_scoo.Data;
 namespace project_scoo.Migrations
 {
     [DbContext(typeof(SystemDbContext))]
-    [Migration("20240104125545_FirstM")]
-    partial class FirstM
+    [Migration("20240107154746_FM")]
+    partial class FM
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -75,8 +75,7 @@ namespace project_scoo.Migrations
                     b.Property<int>("NumOfSeats")
                         .HasColumnType("int");
 
-                    b.Property<int?>("TripId")
-                        .IsRequired()
+                    b.Property<int>("TripId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
