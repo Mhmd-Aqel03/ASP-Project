@@ -4,11 +4,14 @@
     ViewData["Title"] = "TripList";
 }
 
-<h1>TripList</h1>
 
-<p>
-    <a asp-action="BookedList">Show Booked</a>
-</p>
+<h1 class="my-5 display-3 fw-bold ls-tight container-md">
+
+    <span class="text-primary">Trip List</span>
+</h1>
+<br />
+
+<div class="container">
 <table class="table">
     <thead>
         <tr>
@@ -50,3 +53,10 @@
 }
     </tbody>
 </table>
+    <br />
+    <br />
+    <div>
+        <a asp-action="BookedList" class="btn btn-outline-primary container col-1 ">Show Booked</a>
+
+    </div>
+</div>

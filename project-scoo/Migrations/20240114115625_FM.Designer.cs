@@ -12,7 +12,7 @@ using project_scoo.Data;
 namespace project_scoo.Migrations
 {
     [DbContext(typeof(SystemDbContext))]
-    [Migration("20240107154746_FM")]
+    [Migration("20240114115625_FM")]
     partial class FM
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

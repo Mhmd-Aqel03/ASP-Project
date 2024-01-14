@@ -4,46 +4,79 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<!-- Section: Design Block -->
+<section class="">
+    <!-- Jumbotron -->
+    <div class="px-4 py-5 px-md-5 text-center text-lg-start" style="background-color: hsl(0, 0%, 96%)">
+        <div class="container">
+            <div class="row gx-lg-5 align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <h1 class="my-5 display-3 fw-bold ls-tight">
+            
+                        <span class="text-primary">Create Bus</span>
+                    </h1>
+                    <p style="color: hsl(217, 10%, 50.8%)">
+                       To Create New Bus
+                    </p>
+                </div>
 
-<h4>Bus</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="CapName" class="control-label"></label>
-                <input asp-for="CapName" class="form-control" />
-                <span asp-validation-for="CapName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="NumOfSeats" class="control-label"></label>
-                <input asp-for="NumOfSeats" class="form-control" />
-                <span asp-validation-for="NumOfSeats" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label class="control-label"> Trip's Name</label>
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <div class="card">
+                        <div class="card-body py-5 px-md-5">
+                            <form method="post">
+                                <!-- 2 column grid layout with text inputs for the first and last names -->
+                                <div class="row">
+                                    <div class="col-md-6 mb-4">
+                                        <div class="form-outline">
+                                            <label class="form-label" for="CapName">Captain name</label>
+                                            <input asp-for="CapName" type="text" id="CapName" class="form-control" />
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-4">
+                                        <div class="form-outline">
+                                            <label class="form-label" for="NumOfSeats">Number Of the Seats</label>
+                                            <input asp-for="NumOfSeats" type="text" id="NumOfSeats" class="form-control" />
+                                           
+                                        </div>
+                                    </div>
+                                </div>
 
-                <select name="TripId" id="TripId">
-                    @for (int i = 0; i < ViewBag.Trips.Count; i++)
-                    {
-                        <option value=@ViewBag.Trips[i].Id>@ViewBag.Trips[i].Destination</option>
+                                <!-- Trip input -->
+                                <div class="form-outline mb-4">
+                                    <label class="control-label"> Trip's Name</label>
 
-                    }
+                                    <select name="TripId" id="TripId">
+                                        @for (int i = 0; i < ViewBag.Trips.Count; i++)
+                                        {
+                                            <option value=@ViewBag.Trips[i].Id>@ViewBag.Trips[i].Destination</option>
 
-                </select>
+                                        }
+
+                                    </select>
+                                </div>
+
+                            
+
+                                <!-- Submit button -->
+                                <button asp-action="Create" asp-controller="Buses" type="submit" class="btn btn-primary btn-block mb-4">
+                                    Create  
+                                </button> 
+                                <div>
+                                    <a asp-action="Index">Back to List</a>
+                                </div>
+
+                               
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+        </div>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+    <!-- Jumbotron -->
+</section>
+<!-- Section: Design Block -->
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

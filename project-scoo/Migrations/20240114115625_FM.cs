@@ -89,8 +89,7 @@ namespace project_scoo.Migrations
                         name: "FK_Busses_Trips_TripId",
                         column: x => x.TripId,
                         principalTable: "Trips",
-                        principalColumn: "Id"
-                        );
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
